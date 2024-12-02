@@ -7,23 +7,27 @@ from PIL import Image
 import pandas as pd
 
 # Load all models
+
+
+# st.write("Current Working Directory:", os.getcwd())
+# st.write("Files in Directory:", os.listdir("models"))
 @st.cache_data
 def load_all_models():
     models = {
-        "Linear_Regression": load_model("../models/linear_regression_model.pkl"),
-        "Random_Forest_Untuned": load_model("../models/random_forest_model.pkl"),
-        "Random_Forest_Tuned": load_model("../models/tuned_random_forest_model.pkl"),
-        "Gradient_Boosting_Untuned": load_model("../models/gradient_boosting_model.pkl"),
-        "Gradient_Boosting_Tuned": load_model("../models/tuned_gradient_boosting_model.pkl"),
-        "SVR_Untuned": load_model("../models/svr_model.pkl"),
-        "MLP": load_model("../models/mlp_model.pkl"),
+        "Linear_Regression": load_model("models/linear_regression_model.pkl"),
+        "Random_Forest_Untuned": load_model("models/random_forest_model.pkl"),
+        "Random_Forest_Tuned": load_model("models/tuned_random_forest_model.pkl"),
+        "Gradient_Boosting_Untuned": load_model("models/gradient_boosting_model.pkl"),
+        "Gradient_Boosting_Tuned": load_model("models/tuned_gradient_boosting_model.pkl"),
+        "SVR_Untuned": load_model("models/svr_model.pkl"),
+        "MLP": load_model("models/mlp_model.pkl"),
     }
     return models
 
 def load_all_encoder():
     encoders = {
-        "Status_Encoder": load_model("../encoders/label_encoder_status.pkl"),
-        "Standard_Scalar": load_model("../encoders/scaler.pkl")
+        "Status_Encoder": load_model("encoders/label_encoder_status.pkl"),
+        "Standard_Scalar": load_model("encoders/scaler.pkl")
     }
     return encoders
 
